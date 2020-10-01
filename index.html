@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<title>Wezley Mawhinney | Timetable</title>
+	<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <br><br><br><br>
+
+    <section id="chooseWeek">
+        <div class="container">
+            <form action="#">
+                <label for="online_toggle">Are you online</label> &nbsp;&nbsp;&nbsp; <input type="checkbox" name="online_toggle" id="isOnline">
+            </form>
+        </div>
+    </section>
+
+    <section id="timetable">
+        <div class="container">
+            <img src="./img/college.png" alt="" id="timetableImg">
+        </div>
+    </section>
+
+    <section id="largeTimetable">
+            <img src="./img/college.png" alt="" id="largeTimetableImg">
+        </div>
+    </section>
+
+    <section id="key">
+        <div class="container">
+            <img src="./img/key.png" alt="">
+        </div>
+    </section>
+
+    <script>
+        const online = document.getElementById('isOnline');
+        const timetable = document.getElementById('timetableImg');
+        const largeTimetable = document.getElementById('largeTimetableImg');
+
+        var isOnline = false;
+        var isLarge = false;
+
+        online.addEventListener('click', ()=> {
+            if (online.checked) {
+                timetable.src = './img/online.png';
+                largeTimetable.src = './img/online.png';
+                isOnline = true;
+            } else {
+                timetable.src = './img/college.png';
+                largeTimetable.src = './img/college.png';
+                isOnline = false;
+            }
+        });
+
+        timetable.addEventListener('click', ()=> {
+            if (isLarge) {
+                timetable.style.display = 'flex';
+                largeTimetable.style.display = 'none';
+                isLarge = false;
+            } else {
+                timetable.style.display = 'none';
+                largeTimetable.style.display = 'flex';
+                isLarge = true;
+            }
+        });
+
+        largeTimetable.addEventListener('click', ()=> {
+            if (isLarge) {
+                timetable.style.display = 'flex';
+                largeTimetable.style.display = 'none';
+                isLarge = false;
+            } else {
+                timetable.style.display = 'none';
+                largeTimetable.style.display = 'flex';
+                isLarge = true;
+            }
+        });
+        
+    </script>
+	
+</body>
+</html>
